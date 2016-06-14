@@ -3,7 +3,12 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 
-Template.board.onRendered(function boardCreated(){
+
+let piece   = null,
+    running = false;
+
+// document.ready()
+Template.board.onRendered(function boardRendered(){
 
     // #board ul li button
     const buttons = $('#board button');
@@ -25,22 +30,46 @@ Template.board.onRendered(function boardCreated(){
     }
 });
 
-/**
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
+Template.body.events({
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
+    'click #play'(event, instance){
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
+        if(!piece || piece==='')
+            return alert('You must select a piece first');
+
+        running = true;
+
+        $('#play').attr('disabled', 'disabled');
+        $('#piece').attr('disabled', 'disabled');
+        $('#stop').removeAttr('disabled');
+    },
+
+    'click #stop'(event, instance){
+
+        running = false;
+
+        $('#play').removeAttr('disabled');
+        $('#piece').removeAttr('disabled');
+        $('#stop').attr('disabled', 'disabled');
+
+        $('#board button').html('');
+    },
+
+    'change #piece'(event, instance){
+        piece = event.target.value
+    },
+})
+
+Template.board.events({
+
+    'click #board button'(event, instance) {
+
+        const button    = $(event.target);
+
+        console.log(piece);
+        if(piece!=='x' && piece!=='o')
+            return alert('Please select X or O to start with');
+
+        button.html(piece);
+    },
 });
-*/

@@ -5,6 +5,14 @@
 <body>
   <h1>Welcome to Meteor!</h1>
 
+  <select id="piece">
+      <option value="">Select piece</option>
+      <option value="x">X</option>
+      <option value="o">O</option>
+  </select>
+  <button id="play">Play</button>
+  <button id="stop" disabled="disabled">Stop</button>
+
   {{> board}}
 </body>
 
