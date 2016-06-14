@@ -8,6 +8,7 @@ The lessons for this tutorial are split across branches.
 ```bash
 git clone https://github.com/coder-forge/tutorial-xos
 cd tutorial-xos
+git checkout min-shippable-product
 npm install
 meteor
 ```
