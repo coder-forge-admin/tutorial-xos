@@ -2,7 +2,7 @@
   "name": "tutorial-xos",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "cd app && meteor run"
   },
   "dependencies": {
     "meteor-node-stubs": "~0.2.0"
