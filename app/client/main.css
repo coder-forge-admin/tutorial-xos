@@ -1,0 +1,25 @@
+html{
+    height: 90%;
+}
+body{
+    height: 100%;
+}
+#board{
+    position: relative;
+    height: 80%;
+    text-align: center;
+}
+#board ul{
+    height: 100%;
+    padding: 0;
+    list-style: none;
+    }
+#board li{
+    border: 1px solid;
+    display: inline-block;
+    width: 30%;
+    margin: auto;
+}
+#board li button{
+    width: 100%;
+}

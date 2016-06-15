@@ -1,0 +1,33 @@
+<head>
+  <title>simple</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  <select id="piece">
+      <option value="">Select piece</option>
+      <option value="x">X</option>
+      <option value="o">O</option>
+  </select>
+  <button id="play">Play</button>
+  <button id="stop" disabled="disabled">Stop</button>
+
+  {{> board}}
+</body>
+
+<template name="board">
+    <div id="board">
+        <ul>
+            <li><button data-num="1"></button></li>
+            <li><button data-num="2"></button></li>
+            <li><button data-num="3"></button></li>
+            <li><button data-num="4"></button></li>
+            <li><button data-num="5"></button></li>
+            <li><button data-num="6"></button></li>
+            <li><button data-num="7"></button></li>
+            <li><button data-num="8"></button></li>
+            <li><button data-num="9"></button></li>
+        </ul>
+    </div>
+</template>

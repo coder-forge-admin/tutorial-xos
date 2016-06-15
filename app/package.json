@@ -1,0 +1,13 @@
+{
+  "name": "tutorial-xos",
+  "private": true,
+  "scripts": {
+    "start": "cd app && meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0"
+  },
+  "devDependencies": {
+    "express": "^4.13.4"
+  }
+}
