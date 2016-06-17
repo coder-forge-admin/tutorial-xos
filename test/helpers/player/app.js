@@ -6,14 +6,15 @@ const Player = require('./Player');
 /**
  * Mimics another player on network for integration tests.
  *
- * @module tests
+ * @module integration-test
  * @submodule player
  */
-const express = require('../../../app/node_modules/express'),
+
+const express = require(__dirname+'/../../../app/node_modules/express'),
     app = express();
 
 app.use('/', (req, res)=>{
-    res.statusCode(200)
+    res.status(200)
         .send({
             ip: '0.0.0.0',
             player: {name: 'FooBar'},
