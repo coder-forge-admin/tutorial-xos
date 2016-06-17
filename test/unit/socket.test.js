@@ -6,6 +6,17 @@ const assert = require('chai').assert,
 
 describe('Socket', ()=>{
 
+    it('will get the network ip', (done)=>{
+
+        const actual = Socket.getAddress(),
+            test1 = '127.0.0.1',
+            test2 = '127.0.1.1';
+
+        assert.notEqual(actual, test1, 'Invalid ip address: '+actual);
+        assert.notEqual(actual, test2, 'Invalid ip address: '+actual);
+        done();
+    });
+
     it('Will scan for other players', (done)=>{
 
         const expected = {
